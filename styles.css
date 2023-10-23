@@ -4,6 +4,8 @@
     --title-color: #04D361;
     --form-color: #A8A8A8;
     --bg-button-color: #8257e5;
+    --spartan: 'League Spartan', sans-serif;
+    --work: 'Work Sans', sans-serif;
 }
 
 * {
@@ -13,41 +15,40 @@
     font-family: 'League Spartan', sans-serif;
 }
 
-main {
+body,
+input,
+textarea,
+button {
+    font-family: var(--spartan)
+}
+
+.container {
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: row;
 }
 
 aside {
-    margin-left: 50%;
     width: 50%;
     height: 100%;
-    position: absolute;
     display: flex;
     z-index: 1;
-    justify-content: right;
 }
 
-.background {
+main {
     width: 50%;
     height: 100%;
-    position: absolute;
     background-color: var(--body-bg-color);
-    z-index: 2;
-}
-
-section {
-    width: 100%;
-    height: 100%;
     position: relative;
     z-index: 3;
     padding-left: 36px;
-    padding-right: 10px;
 }
 
 .background-image {
-    width: auto;
     height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .logo-image {
@@ -59,17 +60,17 @@ section {
 }
 
 h1 {
-    margin-top: 92px;
-    font-family: 'Work Sans', sans-serif;
     color: var(--title-color);
+    margin-top: 92px;
+    font-family: var(--work);
     font-size: 24px;
     font-weight: 700;
-    z-index: 1;
 }
 
 h2 {
     margin: 8.56px 0;
-    width: 647px;
+    width: 100%;
+    max-width: 647px;
     font-size: 14px;
     font-weight: 700;
     color: var(--text-color);
@@ -82,22 +83,22 @@ h2 {
 }
 
 label {
+    width: 100%;
     margin-top: 50px;
     font-size: 14px;
     font-weight: 700;
     color: var(--form-color);
     display: flex;
-    align-items: initial;
     flex-direction: column;
 }
 
 .send-input {
-    width: 100%;
-    max-width: 798px;
+    width: 75%;
     margin-top: 17px;
     display: flex;
     flex-direction: row;
     box-shadow: 10px 10px 25px var(--body-bg-color);
+    z-index: 10;
 }
 
 input {
@@ -137,4 +138,26 @@ a {
 .arrow-right {
     width: 24px;
     height: 24px;
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 100%;
+        padding: 36px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    aside {
+        z-index: 0;
+        width: 0;
+    }
+
+    .send-input {
+        width: 100%;
+    }
+
+    .logo-image {
+        margin-top: 20px;
+    }
 }
