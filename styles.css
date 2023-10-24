@@ -12,7 +12,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'League Spartan', sans-serif;
 }
 
 body,
@@ -42,7 +41,9 @@ main {
     background-color: var(--body-bg-color);
     position: relative;
     z-index: 3;
-    padding-left: 36px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
 }
 
 .background-image {
@@ -57,7 +58,6 @@ main {
     height: 100%;
     max-width: 389px;
     max-height: 94px;
-    margin-top: 50px;
 }
 
 h1 {
@@ -140,7 +140,7 @@ a {
     height: 24px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     main {
         width: 100%;
         padding: 36px;
